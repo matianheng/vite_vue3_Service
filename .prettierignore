@@ -1,0 +1,8 @@
+#根目录下格式化忽略文件创建 .prettierignore文件#
+/dist/*
+.local
+.output.js
+/node_modules/**
+**/*.svg
+**/*.sh
+/public/*
