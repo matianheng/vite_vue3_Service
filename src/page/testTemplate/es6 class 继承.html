@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+     class Person{
+      constructor(personName, personAge){
+        this.personName = personName || '父亲';
+        this.personAge = personAge || 35;
+      } 
+      eat(food){
+        console.log(personName + '吃吃吃吃吃吃吃好吃' + food);
+      }
+    }
+    class Students extends Person{
+      constructor(personName, personAge, className){
+        // 如果子类中重写了构造器，那么第一句就必须调用父类的构造器（固定写法）
+         super(personName, personAge);
+        this.className = className;
+      }
+      eat(food){
+        // 构造函数中的this是调用对象本身，如果直接使用personName和className会报错（className/personName is not defined）
+        console.log(this.className + "的" + this.personName + '午餐吃' + food);
+      }
+    }
+    let p0 = new Students('李四', 19,''); // 没进行赋值的使用默认赋值
+    let p1 = new Students('李四', 19, '三年（二）班');
+    let p2 = new Students('王五', 20, '三年（二）班');
+    
+    console.log('p0', p0); // p0 Students {personName: '张三', personAge: 18, className: undefined}
+    console.log('p1', p1); // p1 Students {personName: '李四', personAge: 19, className: '三年（二）班'}
+    console.log('p2', p2); // p2 Students {personName: '王五', personAge: 20, className: '三年（二）班'}
+    p1.eat('西红柿炒蛋');  // 三年（二）班的李四午餐吃西红柿炒蛋
+    p2.eat('加糖的西红柿炒蛋'); // 三年（二）班的王五午餐吃加糖的西红柿炒蛋
+    p0.eat('辣椒炒肉')
+
+  console.log("--------------")
+
+//     class A {
+//   constructor() {
+//     console.log(new.target.name,"-");
+//   }
+// }
+// class B extends A {
+//   constructor() {
+//     super();
+//   }
+// }
+// new A() // A
+//new B() // B
+
+</script>
+</html>

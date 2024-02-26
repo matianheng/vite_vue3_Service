@@ -5,6 +5,14 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/HomePage',
     component: () => import('@/page/minidy/heard/index.vue')
+  },
+  {
+    path: '/test',
+    component: () => import('@/page/testTemplate/index.vue')
+  },
+  {
+    path: '/tsss',
+    component: () => import('@/page/testTemplate/tsss.vue')
   }
 ]
 export const router = createRouter({

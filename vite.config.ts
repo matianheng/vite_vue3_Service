@@ -9,7 +9,7 @@ import  path  from "path"; // 引入方法
 export default defineConfig({
   plugins: [vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()], 
       imports: ['vue', 'vue-router', {
         from: 'vue-router',
         imports: ['RouteLocationRaw',],
@@ -18,7 +18,7 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts'
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()],                                                                                                                                                                                                                               
     }),
   ],
   resolve: {

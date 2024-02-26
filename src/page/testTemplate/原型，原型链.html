@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+        function Grendfather(name) {
+            this.name = name;
+        }
+        Grendfather.prototype.sayHello = function() {
+          console.log('你叫啥' + this.name);
+        };
+        function Person(name) {
+            this.name = name;
+        }
+        Person.prototype.sayHello = function() {
+         console.log('Hello, my name is ' + this.name);
+        };
+        const person = new Grendfather('ccccc');
+    
+        person.sayHello(); // 调用继承自原型链上的方法
+ 
+//         // 父类构造函数
+//     function Monkey(name) {
+//         this.name = name;
+//     }
+//     Monkey.prototype.names="路西"
+//  Monkey.prototype.name="路西"
+// // 在父类原型上定义方法
+// Monkey.prototype.sayName = function() {
+//   console.log('我是你猴子曾爷爷 ' + this.name);
+// };
+
+// Monkey.prototype.sayName2 = function() {
+//   console.log('我是你猴子曾爷爷2 ' + this.name);
+// };
+//         // 父类构造函数
+// function Animal(name) {
+//   this.name = name;
+// }
+
+// // 在父类原型上定义方法
+// Animal.prototype.sayName = function() {
+//   console.log('我是你爷爷 ' + this.name);
+// };
+
+// Animal.prototype = new Monkey();
+// Animal.prototype.constructor = Animal;
+// // 子类构造函数
+// function Dog(name, breed) {
+//   Animal.call(this, name); // 将父类属性初始化
+//   this.breed = breed;
+// }
+// Animal.prototype.name="张作霖"
+// Dog.prototype.sayName = function() {
+//   console.log('我是你' + this.name);
+// };
+// // Dog 类继承 Animal 类的方法
+// Dog.prototype = new Animal();
+// Dog.prototype.constructor = Dog;
+
+// // // 在子类原型上定义方法
+// // Dog.prototype.bark = function() {
+// //   console.log('Woof! I am a ' + this.breed);
+// // };
+
+// Dog.prototype.name="张万森"
+// // 创建子类实例
+// const myDog = new Dog('Alice', 'Labrador');
+// myDog.sayName(); // 继承自父类的方法
+// myDog.sayName2(); // 继承自父类的方法
+// console.log(myDog.names) // 继承自父类的方法
+// console.log(Dog.prototype.__proto__) // 继承自父类的方法
+// console.log(Dog.__proto__) // 继承自父类的方法
+// // console.log(Object.getPrototypeOf(myDog)); // 继承自父类的方法
+// // myDog.bark(); // 子类自身定义的方法
+</script>
